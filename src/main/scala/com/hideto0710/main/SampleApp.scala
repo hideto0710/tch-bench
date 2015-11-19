@@ -19,7 +19,7 @@ object SampleApp extends App {
 
   val datesBench = bench
     .start(s"""es query started: k -> $k, f -> $f, logId -> $logId""")
-    .finish((s) => s"""es query finished: duration -> $s, k -> $k, f -> $f, logId -> $logId""")
+    .finish((d) => s"""es query finished: duration -> $d, k -> $k, f -> $f, logId -> $logId""")
 
   val now = ZonedDateTime.now()
   val dates = datesBench.execute((0 to 34).toList.map(i =>
