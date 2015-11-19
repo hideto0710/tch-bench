@@ -13,13 +13,9 @@ object SampleApp extends App {
   val logger = Logger(LoggerFactory.getLogger("App"))
   val bench = TchBench((s: String) => logger.info(s))
 
-  val k = "keyword"
-  val f = "filter"
-  val logId = "logId"
-
   val datesBench = bench
-    .start(s"""es query started: k -> $k, f -> $f, logId -> $logId""")
-    .finish((d) => s"""es query finished: duration -> $d, k -> $k, f -> $f, logId -> $logId""")
+    .start("bench started:")
+    .finish((d) => s"""bench finished: duration -> $d""")
 
   val now = ZonedDateTime.now()
   val dates = datesBench.execute((0 to 34).toList.map(i =>
