@@ -7,7 +7,7 @@ import com.typesafe.scalalogging.Logger
 import org.apache.commons.lang3.time.StopWatch
 import org.slf4j.LoggerFactory
 
-object App extends App {
+object SampleApp extends App {
   implicit val stopWatch = new StopWatch()
   val logger = Logger(LoggerFactory.getLogger("App"))
 
@@ -18,7 +18,8 @@ object App extends App {
   val now = ZonedDateTime.now()
   val dates = TchBench((0 to 34).toList.map(i =>
     now.minusDays(i).format(DateTimeFormatter.ofPattern("yyyyMMdd"))
-  ), (s: String) => logger.info(s))
+  )).out((s: String) => logger.info(s))
     .start(s"""es query started: k -> $k, f -> $f, logId -> $logId""")
-    .finish((s) => s"""es query finished: duration -> $s, k -> $k, f -> $f, logId -> $logId""").execute
+    .finish((s) => s"""es query finished: duration -> $s, k -> $k, f -> $f, logId -> $logId""")
+    .execute
 }
