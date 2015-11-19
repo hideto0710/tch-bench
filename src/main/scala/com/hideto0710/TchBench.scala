@@ -1,4 +1,4 @@
-package com.hideto0710.main
+package com.hideto0710
 
 import org.apache.commons.lang3.time.StopWatch
 

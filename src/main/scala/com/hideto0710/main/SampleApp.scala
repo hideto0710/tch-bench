@@ -3,6 +3,7 @@ package com.hideto0710.main
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 
+import com.hideto0710.TchBench
 import com.typesafe.scalalogging.Logger
 import org.apache.commons.lang3.time.StopWatch
 import org.slf4j.LoggerFactory
