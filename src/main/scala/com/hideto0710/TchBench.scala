@@ -5,7 +5,7 @@ import org.apache.commons.lang3.time.StopWatch
 object TchBench {
 
   def apply(out: (String) => Unit) = {
-    new Builder(out, None, None)
+    Builder(out, None, None)
   }
 
   case class Builder(
